@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task-7</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px;
+        }
+        
+        #train {
+            height: 200px;
+            animation: move 10s linear infinite;
+            animation-play-state: paused;
+        }
+        
+        @keyframes move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .controls {
+            margin-top: 20px;
+        }
+        
+        .controls button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img id="train" src="train.png" alt="train">
+    <div class="controls">
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="pauseAnimation()">Pause</button>
+    </div>
+
+    <script>
+        function startAnimation() {
+            var train = document.getElementById("train");
+            train.style.animationPlayState = "running";
+        }
+
+        function pauseAnimation() {
+            var train = document.getElementById("train");
+            train.style.animationPlayState = "paused";
+        }
+    </script>
+</body>
+</html>
